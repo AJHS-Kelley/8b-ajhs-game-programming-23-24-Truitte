@@ -26,7 +26,6 @@ difficulty = ""
 rangeMin = -1
 rangeMax = -1
 numAttempts = -1
-difficulty = ""
 
 print("""
         *~~~~~~~~~~~~~~~~~~~~~~~~~*
@@ -54,25 +53,37 @@ while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
     # pass -- Tells Python to skip this block of code.
 
     print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
-    secretNumber = random.ranint(rangeMin, rangeMax)
     # Whenever you assign a spevifiv value to something, it's called "hard coded".
     #print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
     #Difficulty levels go 1-3
-    difficulty = "Easy"
-    print("This is easy mode you have 2 guesses to guess a number 1-3")
-    difficulty = "Meduim"
-    print("This is meduim mode you have 5 guesses for numbers 1-15")
-    difficulty = "Hard"
-    print("This is so hard mode you have 4 guess to guess a number 1-25")
+    difficulty = input("What difficulty would you like to select?")
+    if difficulty == "Easy":
+        print("This is easy mode you have 2 guesses to guess a number 1-3")
+        numGuesses = 2
+        rangeMin = 1
+        rangeMax = 3
+    elif difficulty == "Meduim":
+        print("This is meduim mode you have 5 guesses for numbers 1-15")
+        numGuesses = 5
+        rangeMin = 1
+        rangeMax = 15
+    elif difficulty == "Hard":
+        print("This is so hard mode you have 4 guess to guess a number 1-25")
+        numGuesses = 4
+        rangeMin = 1
+        rangeMax = 25
+    else:
+        print("You didnt sumbit an avaible level, were going to pick meduim by default")
+    secretNumber = random.randint(rangeMin, rangeMax)
     
     
     
-    numGuesses = 0
+    numAttempts = 0
     for guesses in range(4): # START THE ROUND!
         # PUT DIFFICULTY CODE 
-        print(f"You have {4 - numGuesses} guesses remaining. \n")
-        playerGuess = input("Type a number from 0 to 20 and press ENTER.sss\n")
+        print(f"You have {numGuesses - numAttempts} guesses remaining. \n")
+        playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER.\n"))
         # input() saves all data as a STRING by defualt.
         # int() will convert to an INTERGER
         # float() will convert to a FLOAT
@@ -86,7 +97,7 @@ while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low")
-        numGuesses += 1
+        numAttempts += 1
     if playerGuess != secretNumber:
         cpuScore += 1
         print("The CPU wins a point since you ran out of guesses.\n")
