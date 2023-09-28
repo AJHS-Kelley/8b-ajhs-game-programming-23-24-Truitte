@@ -12,7 +12,7 @@
     # Tell player round has been lost.
     # Award point to CPU.
 # Check to see if player or CPu has >= 3 points if so they win.
-
+# CODE CRASHES IMMEDIATELY UPON EXECUTING, CODE NOT FINISHED. 
 import random # Import the random module to our code.
 
 # DECLARATIONS
