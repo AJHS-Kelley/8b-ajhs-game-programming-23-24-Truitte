@@ -57,14 +57,15 @@ while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
     #print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
     #Difficulty levels go 1-3
+    # Add insutrctions for difficulty levels.  
     difficulty = input("What difficulty would you like to select?")
     if difficulty == "Easy":
         print("This is easy mode you have 2 guesses to guess a number 1-3")
         numGuesses = 2
         rangeMin = 1
         rangeMax = 3
-    elif difficulty == "Meduim":
-        print("This is meduim mode you have 5 guesses for numbers 1-15")
+    elif difficulty == "Medium":
+        print("This is medium mode you have 5 guesses for numbers 1-15")
         numGuesses = 5
         rangeMin = 1
         rangeMax = 15
@@ -74,13 +75,13 @@ while playerScore != 3 and cpuScore != 3: # START THE MATCH (GAME)
         rangeMin = 1
         rangeMax = 25
     else:
-        print("You didnt sumbit an avaible level, were going to pick meduim by default")
+        print("You didnt sumbit an avaible level, were going to pick medium by default")
     secretNumber = random.randint(rangeMin, rangeMax)
     
     
     
-    numAttempts = 0
-    for guesses in range(4): # START THE ROUND!
+    # numAttempts = 0
+    for guesses in range(numGuesses): # START THE ROUND! 
         # PUT DIFFICULTY CODE 
         print(f"You have {numGuesses - numAttempts} guesses remaining. \n")
         playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER.\n"))
