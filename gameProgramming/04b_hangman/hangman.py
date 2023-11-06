@@ -2,7 +2,6 @@
 import random
 words = 'pizza pasta orange ugly nasty dark light spanish kid adult number letter battle peaceful pacisifst something nothing good bad wet dry calm angry red blue green rainbow segration injustice spider'.split()
 print(words)
-
 # VARIABLE_NAMES in ALL-CAPS AND CONSTANTS AND NOT MEANT TO CHANGE!
 HANGMAN_BOARD = ['''
     +---+
@@ -53,13 +52,13 @@ def displayBoard(missedLetters, correctLetters, secretWord):
 
     print('Missed Letters:', end = ' ')
     for eachLetter in missedLetters:
-        print(eachLetter, end = ' ')
+        print(eachLetter, end =' ')
     print()
     
     blanks = '_' * len(secretWord)
 
     # Replace Blanks with Correct Letters
-    for i in range(len(secretWord))
+    for i in range(len(secretWord)):
         if secretWord[i] in correctLetters:
             blanks = blanks[:i] + blanks[i+1:]
 
@@ -68,7 +67,7 @@ def displayBoard(missedLetters, correctLetters, secretWord):
         print()
 
 
-    def getGuess(alreadyGussed):
+def getGuess(alreadyGussed):
         while True:
             print('Please guess a latter and press enter.')
             guess = input()
