@@ -10,7 +10,7 @@ def rollDice(numDice, sizeDice):
         numRolled += 1
     return sum
 
-def rollDice(numDice, sizeDice):
+def display(numDice, sizeDice):
     numRolled = 0
     sum = 0
     while numRolled < numDice:
