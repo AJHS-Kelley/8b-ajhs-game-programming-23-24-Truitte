@@ -17,6 +17,21 @@ def display(numDice, sizeDice):
         roll = random.randint(1, sizeDice)
         sum += roll
         print(f"Roll: {roll}\n")
-        print(f"Sum: {sum}\n")
+        print(f"Sum: {roll}\n")
         numRolled += 1
     return sum
+
+def isDoubles(roll1, roll2):
+    if roll1 == roll2:
+        isDoubles = True
+    else:
+        isDoubles = False
+    return isDoubles
+
+def isExploding(roll, sizeRoll):
+    if roll == sizeRoll:
+        isExploding = True
+    else:
+        isExploding = False
+    return isExploding
+
