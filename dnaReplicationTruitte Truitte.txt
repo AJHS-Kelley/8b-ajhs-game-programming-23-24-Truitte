@@ -1,0 +1,11 @@
+DNA Sequence: TC
+RNA Sequence: AG
+Transcription Time: 6.2553300857543945
+Score: 350000.0
+Truitte Truitte
+2024-01-18 14:39:03.332919DNA Sequence: G
+RNA Sequence: C
+Transcription Time: 2.999081611633301
+Score: 450000.0
+Truitte Truitte
+2024-01-18 14:39:54.975844

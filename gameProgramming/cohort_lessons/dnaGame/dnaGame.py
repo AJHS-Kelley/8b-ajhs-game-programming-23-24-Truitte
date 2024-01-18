@@ -29,7 +29,7 @@ def doTranscription(dnaSequence: str) -> tuple:
     print("You will now generate the RNA sequence that would match.\n")
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.")
     rnaStart = time.time() #time.time() returns the number of seconds since 00:00:00 UTC Jan. 01, 1970
-    rnaSequence = input("Please enter the matching RNA sequence. Leave no spaces! Then press enter.\n")
+    rnaSequence = input("Please enter the matching RNA sequence. Leave no spaces! Then press enter.\n").upper()
     rnaStop = time.time()
     rnaTime = rnaStop - rnaStart
     return (rnaSequence, rnaTime)
@@ -45,7 +45,7 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
     for dnaBase, rnaBase in zip(dnaSequence, rnaSequence):
         if dnaBase == "A" and rnaBase == "U":
             isMatch = True
-        elif dnaBase == "C" and rnaBase == "C":
+        elif dnaBase == "C" and rnaBase == "G":
             isMatch = True
         elif dnaBase == "G" and rnaBase == "C":
             isMatch = True
@@ -86,9 +86,9 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     score *= scoreMulti
     return score
 
-def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float) -> None:
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) -> None:
     playerName = input("What is your first name?\n")
-    lastName = input("What is your name?\n")
+    lastName = input("What is your lastname?\n")
     fullName = playerName + " " + lastName
 
     fileName= "dnaReplication" + fullName + ".txt"
