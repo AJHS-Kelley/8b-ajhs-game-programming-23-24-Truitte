@@ -90,3 +90,5 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
 dna = genDNA()
 rna = doTranscription(dna)
 print(verifySequence(dna, rna[0]))
+
+print(calcScore(rna[0], rna[1]))
