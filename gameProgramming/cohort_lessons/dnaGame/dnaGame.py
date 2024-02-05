@@ -1,5 +1,5 @@
 # DNA Replication Game, Ryan Kelley, v0.0
-
+# Code works as expected.  ^^^^^^ Why is my name still here?
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime 
 
