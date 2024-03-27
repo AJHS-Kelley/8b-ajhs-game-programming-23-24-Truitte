@@ -1,5 +1,23 @@
 Game Genre / Type: Soccer
-Theme: bright colors, stadium
+Theme: bright colors, stadium, park
 
-Win Condition(s): Score 5 goals before your oppenent
-Loss Condition(s): Let your opponent score 5 before you
+Win Condition(s): 
+    -- Score 5 goals before your opponent.
+Loss Condition(s):
+    -- Let your opponent score 5 before you.
+
+Levels / Screen:
+    -- At a stadium.
+    -- At a park.
+
+Objectives / Enemies / Obstacles:
+    -- People (home jersey, away jersey, home goalie jersey, away goalie jersey)
+
+Items / Equipment / Objects:
+    -- Power-Ups (Speed, make the player move faster.)
+    -- Power-Ups (FreeBee, get a free goal.)
+
+Difficulty Changes:
+    -- adds one more opponent 
+    -- 
+
