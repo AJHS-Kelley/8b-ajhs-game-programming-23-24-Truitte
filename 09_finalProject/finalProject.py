@@ -14,6 +14,10 @@ pygame.init()
 
 difficulty = int(input("Please choose a difficulty. Enter 1 for EASY or 2 for HARD.\n"))
 
+if difficulty ==1:
+    pygame.display.set_caption('NAME OF GAME -- EASY')
+else:
+    pygame.display.set.caption('NAME OF GAME -- HARD')
 
 screen = pygame.display.set_mode((x,y))
 # CREATE AN if / else BLOCK TO SET RESOLUTION BASED ON THE VARIABLE ABOVE.
