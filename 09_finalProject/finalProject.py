@@ -1,23 +1,30 @@
 # Final Project, Truitte Moreland, v0.0
-import sys, random, pygame
-
-resolution = 0 # 0 = Low Resolution (800, 600), 1 = High Resolution
-
-if resolution == 0:
-    x = 800
-    y = 600
-else:
-    x = 1920
-    y = 1080
+import pygame
+from pygame.locals import *
 
 pygame.init()
 
-difficulty = int(input("Please choose a difficulty. Enter 1 for EASY or 2 for HARD.\n"))
+screen_width = 1000
+screen_height = 1000
 
-if difficulty ==1:
-    pygame.display.set_caption('NAME OF GAME -- EASY')
-else:
-    pygame.display.set.caption('NAME OF GAME -- HARD')
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption('Platformer')
 
-screen = pygame.display.set_mode((x,y))
-# CREATE AN if / else BLOCK TO SET RESOLUTION BASED ON THE VARIABLE ABOVE.
+
+#load images
+sun_img = pygame.image.load('img/sun.png')
+bg_img = pygame.image.load('img/sky.png')
+
+run = True
+while run:
+
+    screen.blit(bg_img, (0,0))
+    screen.blit(sun_img, (100, 100))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    pygame.display.update()
+
+pygame.quit()
