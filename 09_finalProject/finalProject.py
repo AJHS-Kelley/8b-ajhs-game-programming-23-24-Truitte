@@ -12,8 +12,8 @@ pygame.display.set_caption('Platformer')
 
 
 #load images
-sun_img = pygame.image.load('img/sun.png')
-bg_img = pygame.image.load('img/sky.png')
+sun_img = pygame.image.load('sun.png')
+bg_img = pygame.image.load('img/sky.webp')
 
 run = True
 while run:
