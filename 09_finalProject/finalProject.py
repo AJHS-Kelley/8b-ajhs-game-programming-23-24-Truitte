@@ -100,3 +100,16 @@ def check_win(board):
         SCREEN.blit(graphical_board[2][0][0], graphical_board[2][0][1])
         pygame.display.update()
         return winner
+    
+    if winner is None:
+        for i in range(len(board)):
+            for j in range(len(board)):
+                if board[i][j] != 'X' and board[i][j] != 'O':
+                    return None
+        return "DRAW"
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
