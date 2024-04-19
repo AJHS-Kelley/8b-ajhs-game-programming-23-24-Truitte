@@ -57,26 +57,13 @@ def add_XO(board, graphical_board, to_move):
     
     return board, to_move
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        if event.type == pyfame.MOUSEBUTTONDOWN:
-            board, to_move = add_XO(board, graphical_board, to_move)
-
-            if game_finished:
-                board = [[1,2, 3], [4, 5, 6],[7, 8, 9]]
-
-                graphical_board = [[[None, None], [None, None], [None, None]], 
-                    [[None, None], [None, None], [None, None]], 
-                    [[None, None], [None, None], [None, None]]]
-                
-                to_move = 'X'
-
-                SCREEN.fill(BG_COLOR)
-                SCREEN.blit(BOARD, (64, 64))
-
-                game_finished = False
-
-                pygame.display.update()
+def check_win(board):
+    winner = None
+    for row in range(0, 3):
+        if((board[row][0] == board[row][1] == board[row][2]) and (board [row][0] is not None)):
+            winner = board[row][0]
+            for i in range(0, 3):
+                graphical_board[row][i][0] = pygame.image.load(f"assets/Winning {winner}.png")
+                SCREEN.blit(graphical_board[row][i][0], graphical_board[row][i][1])
+            pygame.display.update()
+            return winner
