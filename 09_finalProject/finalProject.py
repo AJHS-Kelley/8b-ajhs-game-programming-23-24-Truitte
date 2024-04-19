@@ -57,3 +57,26 @@ def add_XO(board, graphical_board, to_move):
     
     return board, to_move
 
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pyfame.MOUSEBUTTONDOWN:
+            board, to_move = add_XO(board, graphical_board, to_move)
+
+            if game_finished:
+                board = [[1,2, 3], [4, 5, 6],[7, 8, 9]]
+
+                graphical_board = [[[None, None], [None, None], [None, None]], 
+                    [[None, None], [None, None], [None, None]], 
+                    [[None, None], [None, None], [None, None]]]
+                
+                to_move = 'X'
+
+                SCREEN.fill(BG_COLOR)
+                SCREEN.blit(BOARD, (64, 64))
+
+                game_finished = False
+
+                pygame.display.update()
