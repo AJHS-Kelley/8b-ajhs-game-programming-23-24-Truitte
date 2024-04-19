@@ -57,7 +57,7 @@ def add_XO(board, graphical_board, to_move):
     
     return board, to_move
 
-game_finsihed = False
+game_finished = False
 
 def check_win(board):
     winner = None
@@ -69,7 +69,7 @@ def check_win(board):
                 SCREEN.blit(graphical_board[row][i][0], graphical_board[row][i][1])
             pygame.display.update()
             return winner
-        
+
     for col in range(0, 3):
         if((board[0][col] == board[1][col] == board[2][col]) and (board[0][col] is not None)):
             winner =  board[0][col]
@@ -89,7 +89,7 @@ def check_win(board):
         SCREEN.blit(graphical_board[2][2][0], graphical_board[2][2][1])
         pygame.display.update()
         return winner
-    
+          
     if (board[0][2] == board[1][1] == board[2][0]) and (board[0][2] is not None):
         winner =  board[0][2]
         graphical_board[0][2][0] = pygame.image.load(f"assets/Winning {winner}.png")
@@ -113,3 +113,25 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            board, to_move = add_XO(board, graphical_board, to_move)
+
+            if game_finished:
+                board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+                graphical_board = [[[None, None], [None, None], [None, None]], 
+                                    [[None, None], [None, None], [None, None]], 
+                                    [[None, None], [None, None], [None, None]]]
+
+                to_move = 'X'
+
+                SCREEN.fill(BG_COLOR)
+                SCREEN.blit(BOARD, (64, 64))
+
+                game_finished = False
+
+                pygame.display.update()
+            
+            if check_win(board) is not None:
+                game_finished = True
+            
+            pygame.display.update()
