@@ -1,4 +1,6 @@
 #Final project Truitte
+
+# This is just a copy-paste from YouTube.  You need to create YOUR OWN GAME PROJECT.  -- 04/25/24
 import pygame, sys
  
 pygame.init()
