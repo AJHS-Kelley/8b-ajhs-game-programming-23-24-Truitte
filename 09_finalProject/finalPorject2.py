@@ -26,4 +26,12 @@ class snake(object):
         pass
 
 class food(object):
-    pass
+    def _init_(self):
+        pass
+
+    def randomize_position(self):
+        pass
+
+    def draw(self, surface):
+        pass
+    
