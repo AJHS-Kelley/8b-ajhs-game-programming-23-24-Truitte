@@ -46,3 +46,15 @@ UP = (0,-1)
 DOWN = (0, 1)
 LEFT = (-1,0)
 RIGHT = (-1,0)
+
+def main():
+    pygame.init()
+
+    clock = pygame.time.Clock()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
+
+    surface = pygame.Surface(screen.get_size())
+    surface = surface.convert()
+
+
+main()
